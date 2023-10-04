@@ -48,7 +48,6 @@ function initBullets() {
             goToIndexSlide(i);
         })
         bulletContainer.appendChild(bullet);
-        //elem.classList.add('proactivede');
     })
     container.appendChild(bulletContainer);
 }
@@ -104,36 +103,6 @@ function updateBullet() {
             }
         })
     }
-    checkRepeat();
-}
-
-//Affichage ou non des slides et répétition de l'ordre. 
-function checkRepeat() {
-    if (!repeat) {
-        if (slideCurrent === slide.length - 1) {
-            slide[0].classList.add('not-visible');
-            slide[slide.length - 1].image.classList.remove('not-visible');
-            if (!noArrows) {
-                document.querySelector('.arrow_right').classList.add('not-visible')
-                document.querySelector('.arrow_left').classList.remove('not-visible')
-            }
-        }
-        else if (slideCurrent === 0) {
-            slide[slide.length - 1].classList.add('not-visible');
-            slide[0].classList.remove('not-visible');
-            if (!noArrows) {
-                document.querySelector('.arrow_left').classList.add('not-visible')
-                document.querySelector('.arrow_right').classList.remove('not-visible')
-            }
-        } else {
-            slide[slide.length - 1].classList.remove('not-visible');
-            slide[0].classList.remove('not-visible');
-            if (!noArrows) {
-                document.querySelector('.arrow_left').classList.remove('not-visible')
-                document.querySelector('.arrow_right').classList.remove('not-visible')
-            }
-        }
-    }
 }
 
 //Fonction de défilement droit, avec mise à jour du bulletPoint
@@ -144,20 +113,8 @@ function slideRight() {
     } else {
         slideCurrent = 0;
     }
-	//bannerImage.src = slide[slideCurrent].image
-    if (slideCurrent > 0) {
-        var preactiveSlide = slide[slideCurrent - 1].image;
-    } else {
-        var preactiveSlide = slide[slideTotal].image;
-    }
     bannerImage.src = "./assets/images/slideshow/" + slide[slideCurrent].image
     tagLine.innerHTML = slide[slideCurrent].tagLine
-    if (slideCurrent < slideTotal) {
-        var proactiveSlide = slide[slideCurrent + 1].image;
-    } else {
-        var proactiveSlide = slide[0].image;
-    }
-
     updateBullet();
 }
 
@@ -170,20 +127,8 @@ function slideLeft() {
     } else {
         slideCurrent = slideTotal;
     }
-
-    if (slideCurrent < slideTotal) {
-        var proactiveSlide = slide[slideCurrent + 1];
-    } else {
-        var proactiveSlide = slide[0];
-    }
     bannerImage.src = "./assets/images/slideshow/" + slide[slideCurrent].image
     tagLine.innerHTML = slide[slideCurrent].tagLine
-    if (slideCurrent > 0) {
-        var preactiveSlide = slide[slideCurrent - 1];
-    } else {
-        var preactiveSlide = slide[slideTotal];
-    }
-
     updateBullet();
 }
 
