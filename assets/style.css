@@ -316,10 +316,57 @@ footer div {
 }
 
 @media all and (max-width: 805px) {
-	/*.banner .arrow {
-		display: none!important;
-	}*/
+
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+
 	.banner .tag_line {
 		max-width: 50%;
+		font-size: 24px;
+	}
+
+	.banner .tag_line span {
+		font-size: 22px;
+	}
+
+	#about-us, #products{
+		margin: 15px;
+		align-content: center;
+		justify-content: center;
+		display: flex; 
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+
+	#qui {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#why-us div {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#why-us div ul {
+		align-items: center;
+	}
+
+	#contact .container div {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	aside img {
+		max-width: 90%
+	}
+
+	footer {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 }
