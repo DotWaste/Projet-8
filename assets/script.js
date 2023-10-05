@@ -84,7 +84,7 @@ function initArrows() {
 }
 
 
-//Initailisation du slider 
+//Initialisation du slider 
 function slideInitial() {
     initBullets();
     initArrows();
