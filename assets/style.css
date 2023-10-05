@@ -126,6 +126,7 @@ header {
 }
 
 .tag_line { 
+	max-width: 750px;
 	align-self: center;
 	display: flex;
 	flex-direction: column;
@@ -139,11 +140,11 @@ header {
 }
 .banner .arrow_left {
 	left: 10px;
-	margin: 20px;
+	/*margin: 20px;*/
 }
 .banner .arrow_right {
 	right: 10px;
-	margin: 20px;
+	/*margin: 20px;*/
 }
 
 .not-visible {
@@ -315,7 +316,10 @@ footer div {
 }
 
 @media all and (max-width: 805px) {
-	.banner .arrow {
+	/*.banner .arrow {
 		display: none!important;
+	}*/
+	.banner .tag_line {
+		max-width: 50%;
 	}
 }
